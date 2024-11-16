@@ -1,0 +1,35 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Configuración de la conexión JDBC -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/BonVino</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">arr0zc3nteno</property>
+
+        <!-- Dialecto específico para MySQL -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
+
+        <!-- Mostrar SQL ejecutado en consola -->
+        <!--
+<property name="hibernate.show_sql">true</property>
+<property name="hibernate.format_sql">true</property>
+-->
+
+        <!-- Modo de creación de las tablas (opcional) -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Clases de entidad -->
+        <mapping class="utn.frc.dis.entity.Bodega"/>
+        <mapping class="utn.frc.dis.entity.Pais"/>
+        <mapping class="utn.frc.dis.entity.Provincia"/>
+        <mapping class="utn.frc.dis.entity.RegionVitivinicola"/>
+        <mapping class="utn.frc.dis.entity.Resenia"/>
+        <mapping class="utn.frc.dis.entity.Vino"/>
+        <mapping class="utn.frc.dis.entity.Varietal"/>
+
+    </session-factory>
+</hibernate-configuration>
